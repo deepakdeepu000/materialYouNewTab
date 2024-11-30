@@ -1444,6 +1444,49 @@ document.getElementById("menuCloseButton").onclick = () => {
     closeMenuBar()
 }
 
+
+// -------------------
+// CUstom background image------------
+window.onload = function() {
+    const savedImage = localStorage.getItem('backgroundImage');
+    if (savedImage) {
+        document.body.style.backgroundImage = `url(${savedImage})`;
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundRepeat = "no-repeat";
+    }
+};
+
+// Handle file input change and save image to localStorage
+document.getElementById('backgroundImage').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const imageUrl = e.target.result;
+            document.body.style.backgroundImage = `url(${imageUrl})`;
+            document.body.style.backgroundPosition = "center center";
+            document.body.style.backgroundRepeat = "no-repeat";
+            
+            // Save to localStorage
+            localStorage.setItem('backgroundImage', imageUrl);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Reset background image
+document.getElementById('resetImage').addEventListener('click', function() {
+    document.body.style.backgroundImage = '';
+    document.body.style.backgroundPosition = '';
+    document.body.style.backgroundRepeat = '';
+    
+    // Clear the background image from localStorage
+    localStorage.removeItem('backgroundImage');
+});
+// --------------End of custom backgroundImage-----------------
+
+
+
 // ---------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
 

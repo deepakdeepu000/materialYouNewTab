@@ -197,6 +197,37 @@
 /* Theme */
 /* ⚫🟣🔵🔴🟡🟢🟠⚪ */
 
+/* ___________custom background image______________ */
+.custom-file-label {
+	background-color: var(--whitishColor-blue);
+    width: 240px;
+	height: 50px;
+	line-height: 25px;
+	font-size: 13px;
+    display: grid;
+    padding: 12px;
+    color: var(--textColorDark-blue);
+    /* padding-right: 0px; */
+    border-radius: 26px;
+    padding-left: 13px;
+	cursor: pointer;
+}
+#resetImage{
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 2rem;
+	/* background-color: red; */
+	padding: 10px;
+	z-index: 2;
+	cursor: pointer;
+
+}
+/* ___________ End of custom background image______________ */
+
+
+
+
 .accentColor {
 	fill: var(--darkColor-blue);
 }
